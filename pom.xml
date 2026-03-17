@@ -119,14 +119,14 @@
 		<project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<keystore.file>${project.build.directory}/keystore</keystore.file>
-		<google-java-format.version>1.31.0</google-java-format.version>
-		<palantir-java-format.version>2.81.0</palantir-java-format.version>
+		<google-java-format.version>1.35.0</google-java-format.version>
+		<palantir-java-format.version>2.89.0</palantir-java-format.version>
 		<xml-formatter.version>0.4.0</xml-formatter.version>
-		<commons-lang.version>3.19.0</commons-lang.version>
+		<commons-lang.version>3.20.0</commons-lang.version>
 		<netbeans.version>RELEASE170</netbeans.version>
-		<jsoup.version>1.21.2</jsoup.version>
+		<jsoup.version>1.22.1</jsoup.version>
 		<pmd.version>7.17.0</pmd.version>
-		<sshd.version>2.16.0</sshd.version>
+		<sshd.version>2.17.1</sshd.version>
 		<scm.version>2.2.1</scm.version>
 		<argLine></argLine>
 	</properties>
@@ -162,13 +162,13 @@
 			<dependency>
 				<groupId>org.eclipse.jgit</groupId>
 				<artifactId>org.eclipse.jgit</artifactId>
-				<version>7.4.0.202509020913-r</version>
+				<version>7.5.0.202512021534-r</version>
 			</dependency>
 
 			<dependency>
 				<groupId>org.eclipse.jgit</groupId>
 				<artifactId>org.eclipse.jgit.ssh.apache</artifactId>
-				<version>7.4.0.202509020913-r</version>
+				<version>7.5.0.202512021534-r</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -178,7 +178,7 @@
 		<dependency>
 			<groupId>org.eclipse.platform</groupId>
 			<artifactId>org.eclipse.text</artifactId>
-			<version>3.14.400</version>
+			<version>3.14.500</version>
 			<exclusions>
 				<exclusion>
 					<groupId>org.eclipse.platform</groupId>
@@ -195,7 +195,7 @@
 		<dependency>
 			<groupId>org.eclipse.jdt</groupId>
 			<artifactId>org.eclipse.jdt.core</artifactId>
-			<version>3.43.0</version>
+			<version>3.44.0</version>
 			<exclusions>
 				<exclusion>
 					<groupId>org.eclipse.platform</groupId>
@@ -212,7 +212,7 @@
 		<dependency>
 			<groupId>de.funfried.libraries</groupId>
 			<artifactId>jsdt-core</artifactId>
-			<version>1.0.12</version>
+			<version>1.0.13</version>
 			<exclusions>
 				<exclusion>
 					<groupId>com.google.guava</groupId>
@@ -298,7 +298,7 @@
 		<dependency>
 			<groupId>com.diffplug.spotless</groupId>
 			<artifactId>spotless-lib</artifactId>
-			<version>4.0.0</version>
+			<version>4.4.0</version>
 		</dependency>
 
 		<!-- XML Formatter -->
@@ -318,13 +318,13 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-core</artifactId>
-			<version>2.20.0</version>
+			<version>2.21.1</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>2.20.0</version>
+			<version>2.21.1</version>
 		</dependency>
 
 		<!-- CSS Parser -->
@@ -344,7 +344,7 @@
 		<dependency>
 			<groupId>com.manticore-projects.jsqlformatter</groupId>
 			<artifactId>jsqlformatter</artifactId>
-			<version>5.3</version>
+			<version>5.3.9</version>
 			<exclusions>
 				<exclusion>
 					<groupId>org.apache.commons</groupId>
@@ -539,19 +539,19 @@
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-text</artifactId>
-			<version>1.14.0</version>
+			<version>1.15.0</version>
 		</dependency>
 
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
-			<version>2.20.0</version>
+			<version>2.21.0</version>
 		</dependency>
 
 		<dependency>
 			<groupId>commons-validator</groupId>
 			<artifactId>commons-validator</artifactId>
-			<version>1.10.0</version>
+			<version>1.10.1</version>
 		</dependency>
 
 		<!-- Apache Maven -->
@@ -619,12 +619,12 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.14.1</version>
+					<version>3.15.0</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-jar-plugin</artifactId>
-					<version>3.4.2</version>
+					<version>3.5.0</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -634,7 +634,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-resources-plugin</artifactId>
-					<version>3.3.1</version>
+					<version>3.5.0</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -644,7 +644,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-assembly-plugin</artifactId>
-					<version>3.7.1</version>
+					<version>3.8.0</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -654,7 +654,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-antrun-plugin</artifactId>
-					<version>3.1.0</version>
+					<version>3.2.0</version>
 				</plugin>
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
@@ -665,7 +665,7 @@
 					<groupId>org.sonatype.central</groupId>
 					<artifactId>central-publishing-maven-plugin</artifactId>
 					<extensions>true</extensions>
-					<version>0.9.0</version>
+					<version>0.10.0</version>
 					<configuration>
 						<publishingServerId>central</publishingServerId>
 						<waitUntil>published</waitUntil>
@@ -676,7 +676,7 @@
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>buildnumber-maven-plugin</artifactId>
-					<version>3.2.1</version>
+					<version>3.3.0</version>
 					<configuration>
 						<shortRevisionLength>6</shortRevisionLength>
 						<doCheck>false</doCheck>
@@ -686,7 +686,7 @@
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>keytool-maven-plugin</artifactId>
-					<version>1.7</version>
+					<version>2.0.2</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -752,17 +752,17 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-source-plugin</artifactId>
-					<version>3.3.1</version>
+					<version>3.4.0</version>
 				</plugin>
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>versions-maven-plugin</artifactId>
-					<version>2.19.1</version>
+					<version>2.21.0</version>
 				</plugin>
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>jdepend-maven-plugin</artifactId>
-					<version>2.1</version>
+					<version>2.2.0</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -780,17 +780,17 @@
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>license-maven-plugin</artifactId>
-					<version>2.7.0</version>
+					<version>2.7.1</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
-					<version>3.5.4</version>
+					<version>3.5.5</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-dependency-plugin</artifactId>
-					<version>3.9.0</version>
+					<version>3.10.0</version>
 				</plugin>
 				<plugin>
 					<groupId>org.jacoco</groupId>
@@ -846,12 +846,12 @@
 				<plugin>
 					<groupId>com.github.spotbugs</groupId>
 					<artifactId>spotbugs-maven-plugin</artifactId>
-					<version>4.9.7.0</version>
+					<version>4.9.8.2</version>
 				</plugin>
 				<plugin>
 					<groupId>org.owasp</groupId>
 					<artifactId>dependency-check-maven</artifactId>
-					<version>12.1.6</version>
+					<version>12.2.0</version>
 					<configuration>
 						<nvdApiServerId>nvd-api-key</nvdApiServerId>
 						<assemblyAnalyzerEnabled>false</assemblyAnalyzerEnabled>
