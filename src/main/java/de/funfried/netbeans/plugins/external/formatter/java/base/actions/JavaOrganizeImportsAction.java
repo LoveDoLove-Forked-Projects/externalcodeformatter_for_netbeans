@@ -57,10 +57,11 @@ public class JavaOrganizeImportsAction extends BaseAction {
 
 				SwingUtilities.invokeLater(() -> {
 					if (pref.getBoolean(Settings.SHOW_NOTIFICATIONS, false)) {
-						NotificationDisplayer.getDefault().notify("Organized imports using NetBeans internal logic", Icons.ICON_NETBEANS, "", null);
+						NotificationDisplayer.getDefault().notify("Organized imports using NetBeans internal logic", Icons.ICON_NETBEANS, "", null, NotificationDisplayer.Priority.NORMAL,
+								NotificationDisplayer.Category.INFO);
 					}
 
-					StatusDisplayer.getDefault().setStatusText("Organized imports using NetBeans internal logic");
+					StatusDisplayer.getDefault().setStatusText("Organized imports using NetBeans internal logic", 100);
 				});
 			}
 		}

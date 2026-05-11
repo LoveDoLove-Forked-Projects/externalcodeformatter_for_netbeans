@@ -88,10 +88,10 @@ class JsoupXmlFormatJob extends AbstractFormatJob {
 		if (setFormattedCode(code, formattedContent)) {
 			SwingUtilities.invokeLater(() -> {
 				if (pref.getBoolean(Settings.SHOW_NOTIFICATIONS, false)) {
-					NotificationDisplayer.getDefault().notify("Format using Jsoup XML formatter", Icons.ICON_JSOUP, "", null);
+					NotificationDisplayer.getDefault().notify("Format using Jsoup XML formatter", Icons.ICON_JSOUP, "", null, NotificationDisplayer.Priority.NORMAL, NotificationDisplayer.Category.INFO);
 				}
 
-				StatusDisplayer.getDefault().setStatusText("Format using Jsoup XML formatter");
+				StatusDisplayer.getDefault().setStatusText("Format using Jsoup XML formatter", 100);
 			});
 		}
 	}

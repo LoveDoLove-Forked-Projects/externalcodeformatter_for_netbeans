@@ -74,15 +74,15 @@ class SpringFormatJob extends AbstractFormatJob {
 			if (setFormattedCode(code, formattedContent)) {
 				SwingUtilities.invokeLater(() -> {
 					if (pref.getBoolean(Settings.SHOW_NOTIFICATIONS, false)) {
-						NotificationDisplayer.getDefault().notify("Format using Spring formatter", Icons.ICON_SPRING, "", null);
+						NotificationDisplayer.getDefault().notify("Format using Spring formatter", Icons.ICON_SPRING, "", null, NotificationDisplayer.Priority.NORMAL, NotificationDisplayer.Category.INFO);
 					}
 
-					StatusDisplayer.getDefault().setStatusText("Format using Spring formatter");
+					StatusDisplayer.getDefault().setStatusText("Format using Spring formatter", 100);
 				});
 			}
 		} catch (FormattingFailedException ex) {
 			SwingUtilities.invokeLater(() -> {
-				StatusDisplayer.getDefault().setStatusText("Failed to format using Spring formatter: " + ex.getMessage());
+				StatusDisplayer.getDefault().setStatusText("Failed to format using Spring formatter: " + ex.getMessage(), 100);
 			});
 
 			throw ex;

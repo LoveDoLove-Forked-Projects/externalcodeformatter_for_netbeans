@@ -64,15 +64,15 @@ class PalantirFormatJob extends AbstractFormatJob {
 			if (setFormattedCode(code, formattedContent)) {
 				SwingUtilities.invokeLater(() -> {
 					if (pref.getBoolean(Settings.SHOW_NOTIFICATIONS, false)) {
-						NotificationDisplayer.getDefault().notify("Format using Palantir formatter", Icons.ICON_EXTERNAL, "", null);
+						NotificationDisplayer.getDefault().notify("Format using Palantir formatter", Icons.ICON_EXTERNAL, "", null, NotificationDisplayer.Priority.NORMAL, NotificationDisplayer.Category.INFO);
 					}
 
-					StatusDisplayer.getDefault().setStatusText("Format using Palantir formatter");
+					StatusDisplayer.getDefault().setStatusText("Format using Palantir formatter", 100);
 				});
 			}
 		} catch (FormattingFailedException ex) {
 			SwingUtilities.invokeLater(() -> {
-				StatusDisplayer.getDefault().setStatusText("Failed to format using Palantir formatter: " + ex.getMessage());
+				StatusDisplayer.getDefault().setStatusText("Failed to format using Palantir formatter: " + ex.getMessage(), 100);
 			});
 
 			throw ex;
@@ -90,15 +90,16 @@ class PalantirFormatJob extends AbstractFormatJob {
 			if (setFormattedCode(code, formattedContent)) {
 				SwingUtilities.invokeLater(() -> {
 					if (pref.getBoolean(Settings.SHOW_NOTIFICATIONS, false)) {
-						NotificationDisplayer.getDefault().notify("Organizing imports using Palantir formatter", Icons.ICON_EXTERNAL, "", null);
+						NotificationDisplayer.getDefault().notify("Organizing imports using Palantir formatter", Icons.ICON_EXTERNAL, "", null, NotificationDisplayer.Priority.NORMAL,
+								NotificationDisplayer.Category.INFO);
 					}
 
-					StatusDisplayer.getDefault().setStatusText("Organizing imports using Palantir formatter");
+					StatusDisplayer.getDefault().setStatusText("Organizing imports using Palantir formatter", 100);
 				});
 			}
 		} catch (FormattingFailedException ex) {
 			SwingUtilities.invokeLater(() -> {
-				StatusDisplayer.getDefault().setStatusText("Failed to organize imports using Palantir formatter: " + ex.getMessage());
+				StatusDisplayer.getDefault().setStatusText("Failed to organize imports using Palantir formatter: " + ex.getMessage(), 100);
 			});
 
 			throw ex;

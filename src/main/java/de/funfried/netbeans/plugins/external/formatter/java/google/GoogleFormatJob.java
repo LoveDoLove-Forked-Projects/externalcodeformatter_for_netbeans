@@ -70,15 +70,15 @@ class GoogleFormatJob extends AbstractFormatJob {
 			if (setFormattedCode(code, formattedContent)) {
 				SwingUtilities.invokeLater(() -> {
 					if (pref.getBoolean(Settings.SHOW_NOTIFICATIONS, false)) {
-						NotificationDisplayer.getDefault().notify("Format using Google formatter", Icons.ICON_GOOGLE, "", null);
+						NotificationDisplayer.getDefault().notify("Format using Google formatter", Icons.ICON_GOOGLE, "", null, NotificationDisplayer.Priority.NORMAL, NotificationDisplayer.Category.INFO);
 					}
 
-					StatusDisplayer.getDefault().setStatusText("Format using Google formatter");
+					StatusDisplayer.getDefault().setStatusText("Format using Google formatter", 100);
 				});
 			}
 		} catch (FormattingFailedException ex) {
 			SwingUtilities.invokeLater(() -> {
-				StatusDisplayer.getDefault().setStatusText("Failed to format using Google formatter: " + ex.getMessage());
+				StatusDisplayer.getDefault().setStatusText("Failed to format using Google formatter: " + ex.getMessage(), 100);
 			});
 
 			throw ex;
@@ -99,15 +99,16 @@ class GoogleFormatJob extends AbstractFormatJob {
 			if (setFormattedCode(code, formattedContent)) {
 				SwingUtilities.invokeLater(() -> {
 					if (pref.getBoolean(Settings.SHOW_NOTIFICATIONS, false)) {
-						NotificationDisplayer.getDefault().notify("Organizing imports using Google formatter", Icons.ICON_GOOGLE, "", null);
+						NotificationDisplayer.getDefault().notify("Organizing imports using Google formatter", Icons.ICON_GOOGLE, "", null, NotificationDisplayer.Priority.NORMAL,
+								NotificationDisplayer.Category.INFO);
 					}
 
-					StatusDisplayer.getDefault().setStatusText("Organizing imports using Google formatter");
+					StatusDisplayer.getDefault().setStatusText("Organizing imports using Google formatter", 100);
 				});
 			}
 		} catch (FormattingFailedException ex) {
 			SwingUtilities.invokeLater(() -> {
-				StatusDisplayer.getDefault().setStatusText("Failed to organize imports using Google formatter: " + ex.getMessage());
+				StatusDisplayer.getDefault().setStatusText("Failed to organize imports using Google formatter: " + ex.getMessage(), 100);
 			});
 
 			throw ex;

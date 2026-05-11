@@ -79,15 +79,15 @@ class JacksonFormatJob extends AbstractFormatJob {
 			if (setFormattedCode(code, formattedContent)) {
 				SwingUtilities.invokeLater(() -> {
 					if (pref.getBoolean(Settings.SHOW_NOTIFICATIONS, false)) {
-						NotificationDisplayer.getDefault().notify("Format using Jackson Json formatter", Icons.ICON_JACKSON, "", null);
+						NotificationDisplayer.getDefault().notify("Format using Jackson Json formatter", Icons.ICON_JACKSON, "", null, NotificationDisplayer.Priority.NORMAL, NotificationDisplayer.Category.INFO);
 					}
 
-					StatusDisplayer.getDefault().setStatusText("Format using Jackson Json formatter");
+					StatusDisplayer.getDefault().setStatusText("Format using Jackson Json formatter", 100);
 				});
 			}
 		} catch (FormattingFailedException ex) {
 			SwingUtilities.invokeLater(() -> {
-				StatusDisplayer.getDefault().setStatusText("Failed to format using Jackson Json formatter: " + ex.getMessage());
+				StatusDisplayer.getDefault().setStatusText("Failed to format using Jackson Json formatter: " + ex.getMessage(), 100);
 			});
 
 			throw ex;
