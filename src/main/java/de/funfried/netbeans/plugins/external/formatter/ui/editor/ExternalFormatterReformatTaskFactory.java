@@ -156,10 +156,10 @@ public class ExternalFormatterReformatTaskFactory implements ReformatTask.Factor
 
 				SwingUtilities.invokeLater(() -> {
 					if (pref.getBoolean(Settings.SHOW_NOTIFICATIONS, false)) {
-						NotificationDisplayer.getDefault().notify("Format using NetBeans formatter", Icons.ICON_NETBEANS, "", null);
+						NotificationDisplayer.getDefault().notify("Format using NetBeans formatter", Icons.ICON_NETBEANS, "", null, NotificationDisplayer.Priority.NORMAL, NotificationDisplayer.Category.INFO);
 					}
 
-					StatusDisplayer.getDefault().setStatusText("Format using NetBeans formatter");
+					StatusDisplayer.getDefault().setStatusText("Format using NetBeans formatter", 100);
 				});
 			} catch (Throwable ex) {
 				log.log(Level.FINE, "NetBeans internal reformat ran into", ex);

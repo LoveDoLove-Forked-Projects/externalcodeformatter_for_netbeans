@@ -9,7 +9,13 @@
 	</properties>
 
 	<body>
-		<release version="1.15.7-SNAPSHOT" date="N/A" description="N/A">
+		<release version="1.15.7-SNAPSHOT" date="N/A" description="Maintenance release">
+			<action dev="bahlef" type="change">
+				Updated to latest dependency and plugin versions
+			</action>
+			<action dev="bahlef" type="fix">
+				Fixed status and notification messages
+			</action>
 		</release>
 
 		<release version="1.15.6" date="2025-10-28" description="Maintenance release">

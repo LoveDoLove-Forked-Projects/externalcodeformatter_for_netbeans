@@ -67,14 +67,15 @@ class SQLFormatterJob extends AbstractFormatJob {
 			if (setFormattedCode(code, formattedContent)) {
 				SwingUtilities.invokeLater(() -> {
 					if (pref.getBoolean(Settings.SHOW_NOTIFICATIONS, false)) {
-						NotificationDisplayer.getDefault().notify("Format using Vertical Blank SQL formatter", Icons.ICON_EXTERNAL, "", null);
+						NotificationDisplayer.getDefault().notify("Format using Vertical Blank SQL formatter", Icons.ICON_EXTERNAL, "", null, NotificationDisplayer.Priority.NORMAL,
+								NotificationDisplayer.Category.INFO);
 					}
-					StatusDisplayer.getDefault().setStatusText("Format using Vertical Blank SQL formatter");
+					StatusDisplayer.getDefault().setStatusText("Format using Vertical Blank SQL formatter", 100);
 				});
 			}
 		} catch (FormattingFailedException ex) {
 			SwingUtilities.invokeLater(() -> {
-				StatusDisplayer.getDefault().setStatusText("Failed to format using Vertical Blank SQL formatter: " + ex.getMessage());
+				StatusDisplayer.getDefault().setStatusText("Failed to format using Vertical Blank SQL formatter: " + ex.getMessage(), 100);
 			});
 
 			throw ex;

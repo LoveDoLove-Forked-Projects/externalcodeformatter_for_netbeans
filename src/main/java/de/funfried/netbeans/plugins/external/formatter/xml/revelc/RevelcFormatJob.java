@@ -82,10 +82,10 @@ class RevelcFormatJob extends AbstractFormatJob {
 		if (setFormattedCode(code, formattedContent)) {
 			SwingUtilities.invokeLater(() -> {
 				if (pref.getBoolean(Settings.SHOW_NOTIFICATIONS, false)) {
-					NotificationDisplayer.getDefault().notify("Format using revelc XML formatter", Icons.ICON_REVELC, "", null);
+					NotificationDisplayer.getDefault().notify("Format using revelc XML formatter", Icons.ICON_REVELC, "", null, NotificationDisplayer.Priority.NORMAL, NotificationDisplayer.Category.INFO);
 				}
 
-				StatusDisplayer.getDefault().setStatusText("Format using revelc XML formatter");
+				StatusDisplayer.getDefault().setStatusText("Format using revelc XML formatter", 100);
 			});
 		}
 	}

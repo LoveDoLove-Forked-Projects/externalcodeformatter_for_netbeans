@@ -133,10 +133,10 @@ public abstract class AbstractEclipseFormatJob extends AbstractFormatJob {
 
 				SwingUtilities.invokeLater(() -> {
 					if (pref.getBoolean(Settings.SHOW_NOTIFICATIONS, false)) {
-						NotificationDisplayer.getDefault().notify("Format using Eclipse formatter", Icons.ICON_ECLIPSE, msg, null);
+						NotificationDisplayer.getDefault().notify("Format using Eclipse formatter", Icons.ICON_ECLIPSE, msg, null, NotificationDisplayer.Priority.NORMAL, NotificationDisplayer.Category.INFO);
 					}
 
-					StatusDisplayer.getDefault().setStatusText("Format using Eclipse formatter: " + msg);
+					StatusDisplayer.getDefault().setStatusText("Format using Eclipse formatter: " + msg, 100);
 				});
 			}
 		} catch (ProfileNotFoundException ex) {
@@ -147,7 +147,7 @@ public abstract class AbstractEclipseFormatJob extends AbstractFormatJob {
 						NotifyDescriptor.ERROR_MESSAGE);
 				DialogDisplayer.getDefault().notify(notify);
 
-				StatusDisplayer.getDefault().setStatusText(String.format("Profile '%s' not found in %s", formatterProfile, formatterFile));
+				StatusDisplayer.getDefault().setStatusText(String.format("Profile '%s' not found in %s", formatterProfile, formatterFile), 100);
 			});
 
 			throw ex;
@@ -157,13 +157,13 @@ public abstract class AbstractEclipseFormatJob extends AbstractFormatJob {
 						NotifyDescriptor.ERROR_MESSAGE);
 				DialogDisplayer.getDefault().notify(notify);
 
-				StatusDisplayer.getDefault().setStatusText(String.format("Could not find configuration file %s. Make sure the file exists and it can be read.", formatterFile));
+				StatusDisplayer.getDefault().setStatusText(String.format("Could not find configuration file %s. Make sure the file exists and it can be read.", formatterFile), 100);
 			});
 
 			throw ex;
 		} catch (FormattingFailedException ex) {
 			SwingUtilities.invokeLater(() -> {
-				StatusDisplayer.getDefault().setStatusText("Failed to format using Eclipse formatter: " + ex.getMessage());
+				StatusDisplayer.getDefault().setStatusText("Failed to format using Eclipse formatter: " + ex.getMessage(), 100);
 			});
 
 			throw ex;
